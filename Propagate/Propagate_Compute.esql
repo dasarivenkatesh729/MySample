@@ -4,10 +4,8 @@ CREATE COMPUTE MODULE Propagate_Compute
 	CREATE FUNCTION Main() RETURNS BOOLEAN
 	BEGIN
 		
-		-- CALL CopyEntireMessage();
-		-- DECLARE replyid BLOB;
-		--SET replyid   = InputLocalEnvironment.Destination.HTTP.RequestIdentifier;
-		FOR emPloyeeref AS InputRoot.XMLNSC.Employees.Employee[] DO
+		
+		 FOR emPloyeeref AS InputRoot.XMLNSC.Employees.Employee[] DO
 			CALL CopyMessageHeaders();
 			-- SET OutputLocalEnvironment.Destination.HTTP.RequestIdentifier = replyid;
 			SET OutputRoot.XMLNSC.Employee = emPloyeeref;

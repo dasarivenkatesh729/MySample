@@ -5,6 +5,7 @@ CREATE COMPUTE MODULE Stub_Compute
 	BEGIN
 		 CALL CopyMessageHeaders();
 		-- CALL CopyEntireMessage();
+		DECLARE I INTEGER;
 		SET OutputRoot.XMLNSC.CUSTOMER.STATUS ='ACTIVE';
 		SET OutputRoot.XMLNSC.CUSTOMER.BALANCE ='500';
 		RETURN TRUE;

@@ -10,6 +10,7 @@ CREATE COMPUTE MODULE Propagate_Compute
 			-- SET OutputLocalEnvironment.Destination.HTTP.RequestIdentifier = replyid;
 			SET OutputRoot.XMLNSC.Employee = emPloyeeref;
 			PROPAGATE;
+			RETURN FALSE;
 		END FOR;
 	END;
 

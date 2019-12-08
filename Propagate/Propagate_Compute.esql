@@ -1,4 +1,4 @@
-
+DECLARE ID EXTERNAL INTEGER 0;
 
 CREATE COMPUTE MODULE Propagate_Compute
 	CREATE FUNCTION Main() RETURNS BOOLEAN
@@ -7,9 +7,8 @@ CREATE COMPUTE MODULE Propagate_Compute
 		
 		 FOR emPloyeeref AS InputRoot.XMLNSC.Employees.Employee[] DO
 			CALL CopyMessageHeaders();
-			-- SET OutputLocalEnvironment.Destination.HTTP.RequestIdentifier = replyid;
 			SET OutputRoot.XMLNSC.Employee = emPloyeeref;
-			PROPAGATE;
+			 PROPAGATE;
 			RETURN FALSE;
 		END FOR;
 	END;
